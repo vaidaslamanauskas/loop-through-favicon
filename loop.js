@@ -1,8 +1,8 @@
-var favicon_images = [
+var favicons = [
   ''
 ],
 
-image_counter = 0; // To keep track of the current image
+counter = 0; // To keep track of the current image
 
 setInterval(function() {
 
@@ -14,12 +14,12 @@ setInterval(function() {
      document.querySelector("link[rel='shortcut icon']").remove();
 
   // add new favicon image
-  document.querySelector("head").insertAdjacentHTML('beforeend', '<link rel="icon" href="' + favicon_images[image_counter] + '" type="image/gif">');
+  document.querySelector("head").insertAdjacentHTML('beforeend', '<link rel="icon" href="' + favicons[counter] + '" type="image/gif">');
 
   // If last image then goto first image
   // Else go to next image    
-  if(image_counter == favicon_images.length -1)
-     image_counter = 0;
+  if(counter == favicons.length -1)
+     counter = 0;
   else
-    image_counter++;
+    counter++;
 }, 1000);
